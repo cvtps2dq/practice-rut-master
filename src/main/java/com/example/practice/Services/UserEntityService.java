@@ -19,7 +19,7 @@ public class UserEntityService {
         return repository.findAll();
     }
 
-    public UserEntity getGameById(int id) {
+    public UserEntity getUserEntityById(int id) {
         if (repository.findById(id).isPresent())
             return repository.findById(id).get();
         else
@@ -30,11 +30,11 @@ public class UserEntityService {
         return repository.findUserEntityByNickname(nickname);
     }
 
-    public UserEntity saveGame(UserEntity userEntity) {
+    public UserEntity saveUserEntity(UserEntity userEntity) {
         return repository.save(userEntity);
     }
 
-    public UserEntity editArtist(UserEntity updatedUserEntity, int id) {
+    public UserEntity editUserEntity(UserEntity updatedUserEntity, int id) {
         return repository.findById(id)
                 .map(userEntity -> {
                     userEntity.setRegDate(updatedUserEntity.getRegDate());

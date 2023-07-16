@@ -19,6 +19,9 @@ public class GameService {
         return repository.findAll();
     }
 
+    public List<Game> getAllGame() {
+        return repository.findAll();
+    }
     public Game getGameById(int id) {
         if (repository.findById(id).isPresent())
             return repository.findById(id).get();
@@ -30,11 +33,15 @@ public class GameService {
         return repository.findGameByName(name);
     }
 
+    public List<Game> getGamesByUserId(long userId) {
+        return repository.findGamesByUserId(userId);
+    }
+
     public Game saveGame(Game game) {
         return repository.save(game);
     }
 
-    public Game editArtist(Game updatedGame, int id) {
+    public Game editGame(Game updatedGame, int id) {
         return repository.findById(id)
                 .map(game -> {
                     game.setPrice(updatedGame.getPrice());
@@ -45,6 +52,8 @@ public class GameService {
                 })
                 .orElseThrow(() -> new IllegalArgumentException("Can't update game: no such game"));
     }
+
+
 
     public void deleteGame(int id) {
         repository.deleteById(id);

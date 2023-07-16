@@ -1,10 +1,13 @@
 package com.example.practice.Services;
 
 import com.example.practice.models.ReviewEntity;
+import com.example.practice.models.UserEntity;
 import org.springframework.stereotype.Service;
 import com.example.practice.repositories.ReviewEntityRepository;
 
 import java.util.List;
+
+import java.util.Date;
 
 @Service
 public class ReviewEntityService {
@@ -34,7 +37,11 @@ public class ReviewEntityService {
         return repository.save(userEntity);
     }
 
-    public ReviewEntity editArtist(ReviewEntity updatedReviewEntity, int id) {
+    public List<ReviewEntity> getReviewsByUserAndDate(UserEntity user, Date date) {
+        return repository.findReviewsByUserAndDate(user, date);
+    }
+
+    public ReviewEntity editReviewEntity(ReviewEntity updatedReviewEntity, int id) {
         return repository.findById(id)
                 .map(reviewEntity -> {
                     reviewEntity.setRating(updatedReviewEntity.getRating());

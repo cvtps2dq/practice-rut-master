@@ -19,6 +19,9 @@ public class ItemService {
         return repository.findAll();
     }
 
+    public List<Item> getItemsByGameGenreAndUserId(String genre, long userId) {
+        return repository.findItemsByGameGenreAndUserId(genre, userId);
+    }
     public Item getItemById(int id) {
         if (repository.findById(id).isPresent())
             return repository.findById(id).get();
@@ -34,7 +37,7 @@ public class ItemService {
         return repository.save(item);
     }
 
-    public Item editArtist(Item updatedItem, int id) {
+    public Item editItem(Item updatedItem, int id) {
         return repository.findById(id)
                 .map(item -> {
                     item.setQuality(updatedItem.getQuality());
