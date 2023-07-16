@@ -1,4 +1,4 @@
-package com.example.practice.Services;
+package com.example.practice.services;
 
 import com.example.practice.models.ReviewEntity;
 import com.example.practice.models.UserEntity;
@@ -38,7 +38,7 @@ public class ReviewEntityService {
     }
 
     public List<ReviewEntity> getReviewsByUserAndDate(UserEntity user, Date date) {
-        return repository.findReviewsByUserAndDate(user, date);
+        return repository.findReviewsByUserAndDate(user.getId(), date);
     }
 
     public ReviewEntity editReviewEntity(ReviewEntity updatedReviewEntity, int id) {

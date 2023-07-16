@@ -1,6 +1,6 @@
-package com.example.practice.Controllers;
+package com.example.practice.controllers;
 
-import com.example.practice.Services.UserEntityService;
+import com.example.practice.services.UserEntityService;
 import com.example.practice.models.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

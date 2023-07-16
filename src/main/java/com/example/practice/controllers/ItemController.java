@@ -1,9 +1,9 @@
-package com.example.practice.Controllers;
+package com.example.practice.controllers;
 
-import com.example.practice.Services.GameService;
-import com.example.practice.Services.ItemService;
-import com.example.practice.Services.ReviewEntityService;
-import com.example.practice.Services.UserEntityService;
+import com.example.practice.services.GameService;
+import com.example.practice.services.ItemService;
+import com.example.practice.services.ReviewEntityService;
+import com.example.practice.services.UserEntityService;
 import com.example.practice.models.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

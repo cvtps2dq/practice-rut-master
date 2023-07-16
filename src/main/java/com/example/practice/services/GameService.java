@@ -1,4 +1,4 @@
-package com.example.practice.Services;
+package com.example.practice.services;
 
 import com.example.practice.models.Game;
 import org.springframework.stereotype.Service;

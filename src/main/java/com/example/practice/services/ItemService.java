@@ -1,4 +1,4 @@
-package com.example.practice.Services;
+package com.example.practice.services;
 
 import com.example.practice.models.Item;
 import org.springframework.stereotype.Service;
