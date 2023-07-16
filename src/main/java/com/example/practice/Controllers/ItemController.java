@@ -41,7 +41,7 @@ public class ItemController {
     }
 
     @GetMapping("/genre/{genre}/user/{userId}")
-    public List<Item> getItemsByGenreAndUserId(@PathVariable String genre, @PathVariable long userId) {
+    public List<Item> getItemsByGameGenreAndUserId(@PathVariable String genre, @PathVariable long userId) {
         return itemService.getItemsByGameGenreAndUserId(genre, userId);
     }
 

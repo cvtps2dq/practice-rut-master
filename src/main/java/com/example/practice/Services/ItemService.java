@@ -20,7 +20,7 @@ public class ItemService {
     }
 
     public List<Item> getItemsByGameGenreAndUserId(String genre, long userId) {
-        return repository.findItemsByGameGenreAndUserId(genre, userId);
+        return repository.findShooterItemsByUserId(userId);
     }
     public Item getItemById(int id) {
         if (repository.findById(id).isPresent())
